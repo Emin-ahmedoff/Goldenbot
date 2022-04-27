@@ -26,7 +26,7 @@ bot = Client(
 #start mesajı
 
 @bot.on_message(filters.command(['start']))
-def start(client, message):
+def start(client: Client, message: Message):
     golden = f'👋 **Salam** {message.from_user.mention}\n\n**Mən musiqi və video yükləmək üçün yaradılmış botam və istədiyiniz mahnının sözlərini məndən öyrənə bilərsiniz 😁**\n\n**✅ Botun istifadə qaydasını öyrənmək üçün** /help **əmrindən istifadə edin**'
     message.reply_text(
         text=golden, 
