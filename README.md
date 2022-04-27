@@ -21,6 +21,6 @@ Repo demo versiyadır
 - BOT_USERNAME - Botun kullanıcı adı
 
 # Deploy
-<a href="https://heroku.com/deploy?template=https://github.com/Emin-ahmedoff/Goldenbot-">
+<a href="https://heroku.com/deploy?template=https://github.com/Emin-ahmedoff/Goldenbot">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
