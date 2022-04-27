@@ -3,7 +3,7 @@
 #Rəsmi Kanal t.me/Botsinator 
 
 import os, youtube_dl, requests, time
-from config import BOT_OWNER, BOT_USERNAME PLAYLIST_ID PLAYLIST_NAME
+from config import BOT_OWNER, BOT_USERNAME, PLAYLIST_ID, PLAYLIST_NAME
 from youtube_search import YoutubeSearch
 from pyrogram.handlers import MessageHandler
 from pyrogram import Client, filters
