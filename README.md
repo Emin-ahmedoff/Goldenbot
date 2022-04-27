@@ -1,4 +1,4 @@
-# Demon Music Bot
+# Golden Music Bot
 
 ![logo](https://telegra.ph/file/50694e1b2a639f38c6dfd.jpg)
 
