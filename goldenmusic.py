@@ -3,7 +3,7 @@
 #Rəsmi Kanal t.me/Botsinator 
 
 import os, youtube_dl, requests, time
-from config import Config
+from config import BOT_OWNER, BOT_USERNAME PLAYLIST_ID PLAYLIST_NAME
 from youtube_search import YoutubeSearch
 from pyrogram.handlers import MessageHandler
 from pyrogram import Client, filters
@@ -18,9 +18,9 @@ from pyrogram.types import (
 
 bot = Client(
     'Goldenbot',
-    bot_token = Config.BOT_TOKEN,
-    api_id = Config.API_ID,
-    api_hash = Config.API_HASH
+    bot_token = BOT_TOKEN,
+    api_id = API_ID,
+    api_hash = API_HASH
 )
 
 #start mesajı
@@ -34,9 +34,9 @@ def start(client: Client, message: Message):
         reply_markup=InlineKeyboardMarkup(
             [[
                     InlineKeyboardButton('Rəsmi Kanal ✅', url='https://t.me/Botliste'),
-                    InlineKeyboardButton('Playlist 🎵', url=f'https://t.me/{Config.PLAYLIST_NAME}')
+                    InlineKeyboardButton('Playlist 🎵', url=f'https://t.me/{PLAYLIST_NAME}')
                   ],[
-                    InlineKeyboardButton('Sahib 👨🏻‍💻', url=f'T.me/{Config.BOT_OWNER}')
+                    InlineKeyboardButton('Sahib 👨🏻‍💻', url=f'T.me/{BOT_OWNER}')
                 ]
             ]
         )
@@ -53,9 +53,9 @@ def help(client, message):
         reply_markup=InlineKeyboardMarkup(
             [[
                     InlineKeyboardButton('Rəsmi Kanal ✅', url='https://t.me/Botsinator'),
-                    InlineKeyboardButton('Playlist 🎵', url=f'https://t.me/{Config.PLAYLIST_NAME}')
+                    InlineKeyboardButton('Playlist 🎵', url=f'https://t.me/{PLAYLIST_NAME}')
                   ],[
-                    InlineKeyboardButton('Sahib 👨🏻‍💻', url=f'T.me/{Config.BOT_OWNER}')
+                    InlineKeyboardButton('Sahib 👨🏻‍💻', url=f'T.me/{BOT_OWNER}')
                 ]
             ]
         )
@@ -63,7 +63,7 @@ def help(client, message):
 
 #alive mesaji#
 
-@bot.on_message(filters.command("alive") & filters.user(Config.BOT_OWNER))
+@bot.on_message(filters.command("alive") & filters.user(BOT_OWNER))
 async def live(client: Client, message: Message):
     livemsg = await message.reply_text('`Mükəmməl İşləyirəm 😎`')
     
@@ -111,14 +111,14 @@ def a(client, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"🎵 Yüklədi [Music Bot](https://t.me/{Config.BOT_USERNAME})"
+        rep = f"🎵 Yüklədi [Music Bot](https://t.me/{BOT_USERNAME})"
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
         message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name, performer="@Botsinator")
         m.delete()
-        bot.send_audio(chat_id=Config.PLAYLIST_ID, audio=audio_file, caption=rep, performer="@Botsinator", parse_mode='md', title=title, duration=dur, thumb=thumb_name)
+        bot.send_audio(chat_id=PLAYLIST_ID, audio=audio_file, caption=rep, performer="@Botsinator", parse_mode='md', title=title, duration=dur, thumb=thumb_name)
     except Exception as e:
         m.edit('**⚠️ Gözlənilməyən xəta yarandı.**\n**Xahiş edirəm xətanı sahibimə xəbərdar et!**')
         print(e)
