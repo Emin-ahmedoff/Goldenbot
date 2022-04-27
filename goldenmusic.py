@@ -27,9 +27,9 @@ bot = Client(
 
 @bot.on_message(filters.command(['start']))
 def start(client, message):
-    demon = f'👋 **Salam** {message.from_user.mention}\n\n**Mən musiqi və video yükləmək üçün yaradılmış botam və istədiyiniz mahnının sözlərini məndən öyrənə bilərsiniz 😁**\n\n**✅ Botun istifadə qaydasını öyrənmək üçün** /help **əmrindən istifadə edin**'
+    golden = f'👋 **Salam** {message.from_user.mention}\n\n**Mən musiqi və video yükləmək üçün yaradılmış botam və istədiyiniz mahnının sözlərini məndən öyrənə bilərsiniz 😁**\n\n**✅ Botun istifadə qaydasını öyrənmək üçün** /help **əmrindən istifadə edin**'
     message.reply_text(
-        text=demon, 
+        text=golden, 
         quote=False,
         reply_markup=InlineKeyboardMarkup(
             [[
